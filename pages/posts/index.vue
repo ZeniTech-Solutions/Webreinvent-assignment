@@ -10,9 +10,9 @@
     <!-- Posts Grid -->
     <div v-else-if="postStore.getPosts && postStore.getPosts.length > 0" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       <div v-for="post in postStore.getPosts" :key="post.id" class="flex">
-        <NuxtLink :to="`/posts/${post.id}`" class="w-full">
+        <div @click="() => { postStore.setCurrentPost(post); navigateTo(`/posts/${post.id}`) }" class="w-full">
           <PostCard :post="post" />
-        </NuxtLink>
+        </div>
       </div>
     </div>
     
