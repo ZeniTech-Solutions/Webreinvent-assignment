@@ -56,7 +56,9 @@ const usePostStore = defineStore("postStore", {
                 this.currentPage = page;
                 this.skip = (page - 1) * this.limit;
                 
-                const response = await useFetch(`https://dummyjson.com/posts?limit=${this.limit}&skip=${this.skip}`);
+                const response = await useFetch(`https://dummyjson.com/posts?limit=${this.limit}&skip=${this.skip}`, {
+                    cache: 'force-cache',
+                });
                 const data = response.data.value as any;
                 
                 this.posts = data.posts as Post[];
@@ -80,7 +82,9 @@ const usePostStore = defineStore("postStore", {
                 this.currentPost = null;
                 this.comments = null;
                 
-                const response = await useFetch(`https://dummyjson.com/posts/${postId}`);
+                const response = await useFetch(`https://dummyjson.com/posts/${postId}`, {
+                    cache: 'force-cache',
+                });
                 const data = response.data.value as Post;
                 
                 this.currentPost = data;
@@ -99,7 +103,9 @@ const usePostStore = defineStore("postStore", {
          */
         async fetchComments(postId: number) {
             try {
-                const response = await useFetch(`https://dummyjson.com/posts/${postId}/comments`);
+                const response = await useFetch(`https://dummyjson.com/posts/${postId}/comments`, {
+                    cache: 'force-cache',
+                });
                 const data = response.data.value as any;
                 
                 this.comments = data.comments as Comment[];

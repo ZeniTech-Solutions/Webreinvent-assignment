@@ -98,7 +98,7 @@
                 
                 <div v-if="similarPosts && similarPosts.length > 0" class="space-y-4">
                   <div v-for="post in similarPosts" :key="post.id" class="border-b border-gray-100 pb-4 last:border-0 last:pb-0">
-                    <div @click="() => {postStore.setCurrentPost(post); navigateTo(`/posts/${post.id}`)}" class="block hover:bg-gray-50 transition-colors rounded-md p-2 -mx-2">
+                    <div @click="() => {postStore.setCurrentPost(post); navigateTo(`/posts/${post.id}`)}" class="block cursor-pointer hover:bg-gray-50 transition-colors rounded-md p-2 -mx-2">
                       <h3 class="font-medium text-gray-900 mb-1 line-clamp-2">{{ post.title }}</h3>
                       
                       <div class="flex flex-wrap gap-1 mb-2">

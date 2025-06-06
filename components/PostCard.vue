@@ -1,5 +1,5 @@
 <template>
-  <div class="border rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 bg-white">
+  <div class="border rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 bg-white hover:bg-gray-50">
     <div class="p-4">
       <h2 class="text-xl font-bold mb-2 truncate">{{ post.title }}</h2>
       <p class="text-gray-600 mb-4 line-clamp-4">{{ post.body }}</p>
